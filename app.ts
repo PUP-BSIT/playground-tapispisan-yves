@@ -4,12 +4,20 @@ enum DistanceUnit {
     MILE = "m"
 }
 
+enum Direction {
+    NORTH = "N",
+    EAST = "E",
+    WEST = "W",
+    SOUTH = "S"
+}
+
 //1
 type Vehicle = {
     plate_no: string;
     owner_name: string;
     speed: number; 
     printSpeed(): void;
+    direction(): void;
 };
 
 //3
@@ -19,6 +27,9 @@ const myCar: Vehicle = {
     speed: 50,
     printSpeed() {
         console.log(`The current speed of ${this.plate_no} is ${this.speed} ${DistanceUnit.MILE}`);
+    },
+    direction(){
+        console.log(`Going to ${Direction.SOUTH}${Direction.WEST}`)
     }
 };
 
@@ -28,6 +39,7 @@ type Person = {
     birthday: Date;
     speed: number; 
     printSpeed(): void;
+    direction(): void;
 };
 
 //4
@@ -37,6 +49,9 @@ const janeDee: Person = {
     speed: 6.5,
     printSpeed() {
         console.log(`The current speed of ${this.full_name} is ${this.speed} ${DistanceUnit.KILOMETER}`)
+    },
+    direction(){
+        console.log(`Going to ${Direction.NORTH}${Direction.EAST}`)
     }
 }
 
@@ -50,7 +65,13 @@ function speedTest(contestant: Contestant): void {
     contestant.printSpeed();
 }
 
+function directionGoing(contestant: Contestant): void{
+    contestant.direction();
+}
+
 //7
 speedTest(janeDee);
+directionGoing(janeDee);
 speedTest(myCar);
+directionGoing(myCar);
 
