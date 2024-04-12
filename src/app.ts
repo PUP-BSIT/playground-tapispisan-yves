@@ -79,3 +79,19 @@ directionGoing(myCar);
 import { person1 } from "./person";
 
 console.log(person1);
+
+function Logger(constructor: Function, metadata: object) {
+    console.log("Logging...");
+    console.log(constructor);
+    console.log(metadata);
+}
+  
+@Logger
+class Name {
+    constructor(private name: string) {
+      console.log(`${this.name}" is created.`);
+    }
+}
+   
+const name1 = new Name("John Doe");
+const name2 = new Name("Jane Dee");
