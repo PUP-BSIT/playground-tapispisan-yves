@@ -75,3 +75,7 @@ directionGoing(janeDee);
 speedTest(myCar);
 directionGoing(myCar);
 
+//import
+import { person1 } from "./person";
+
+console.log(person1);

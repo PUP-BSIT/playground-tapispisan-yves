@@ -1,3 +1,4 @@
+"use strict";
 //8
 var DistanceUnit;
 (function (DistanceUnit) {
@@ -12,27 +13,27 @@ var Direction;
     Direction["SOUTH"] = "S";
 })(Direction || (Direction = {}));
 //3
-var myCar = {
+const myCar = {
     plate_no: "ABC 1234",
     owner_name: "John Doe",
     speed: 50,
-    printSpeed: function () {
-        console.log("The current speed of ".concat(this.plate_no, " is ").concat(this.speed, " ").concat(DistanceUnit.MILE));
+    printSpeed() {
+        console.log(`The current speed of ${this.plate_no} is ${this.speed} ${DistanceUnit.MILE}`);
     },
-    direction: function () {
-        console.log("Going to ".concat(Direction.SOUTH).concat(Direction.WEST));
+    direction() {
+        console.log(`Going to ${Direction.SOUTH}${Direction.WEST}`);
     }
 };
 //4
-var janeDee = {
+const janeDee = {
     full_name: "Jane Dee",
     birthday: new Date("2002-03-25"),
     speed: 6.5,
-    printSpeed: function () {
-        console.log("The current speed of ".concat(this.full_name, " is ").concat(this.speed, " ").concat(DistanceUnit.KILOMETER));
+    printSpeed() {
+        console.log(`The current speed of ${this.full_name} is ${this.speed} ${DistanceUnit.KILOMETER}`);
     },
-    direction: function () {
-        console.log("Going to ".concat(Direction.NORTH).concat(Direction.EAST));
+    direction() {
+        console.log(`Going to ${Direction.NORTH}${Direction.EAST}`);
     }
 };
 //5
